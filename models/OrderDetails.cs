@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ApiProject.Models;
 
@@ -13,6 +14,7 @@ public class OrderDetails
     public int OrderId { get; set; }
     
     [ForeignKey("OrderId")]
+    [JsonIgnore]
     public Orders? Order { get; set; }
     
     [Required]

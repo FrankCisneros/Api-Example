@@ -28,10 +28,14 @@ public class OrdersController : Controller
         if (size < 1 || size > 100) size = 10;
 
         int skip = (page - 1) * size;
-        var orders = await _context.Orders.Skip(skip).Take(size).ToListAsync();
-
         var data = await _context.Orders
-            .AsNoTracking().OrderBy(o => o.Id).Skip(skip).Take(size).ToListAsync();
+            .AsNoTracking()
+            .Include(order => order.OrderDetails!)
+                .ThenInclude(detail => detail.Product)
+            .OrderBy(order => order.Id)
+            .Skip(skip)
+            .Take(size)
+            .ToListAsync();
 
         return Ok(new
         {
@@ -45,7 +49,11 @@ public class OrdersController : Controller
     [HttpGet("Orders/{id}")]
     public async Task<IActionResult> GetOrderById(int id)
     {
-        var order = await _context.Orders.FindAsync(id);
+        var order = await _context.Orders
+            .AsNoTracking()
+            .Include(order => order.OrderDetails!)
+                .ThenInclude(detail => detail.Product)
+            .FirstOrDefaultAsync(order => order.Id == id);
         if (order == null)
         {
             return NotFound();
@@ -61,11 +69,30 @@ public class OrdersController : Controller
             return BadRequest("No se proporcionaron pedidos para crear.");
         }
 
-        var orders = orderRequest.Select(o => new Orders
+        var productIds = orderRequest.Select(request => request.ProductId).Distinct().ToList();
+        var existingProductIds = await _context.Productos
+            .Where(product => productIds.Contains(product.Id))
+            .Select(product => product.Id)
+            .ToListAsync();
+
+        if (existingProductIds.Count != productIds.Count)
         {
-            ProductId = o.ProductId,
-            Quantity = o.Quantity,
-            OrderDate = DateTime.UtcNow
+            return BadRequest("Uno o más productos no existen.");
+        }
+
+        var orders = orderRequest.Select(request => new Orders
+        {
+            ProductId = request.ProductId,
+            Quantity = request.Quantity,
+            OrderDate = DateTime.UtcNow,
+            OrderDetails = new List<OrderDetails>
+            {
+                new()
+                {
+                    ProductId = request.ProductId,
+                    Quantity = request.Quantity
+                }
+            }
         }).ToList();
 
         await _context.Orders.AddRangeAsync(orders);

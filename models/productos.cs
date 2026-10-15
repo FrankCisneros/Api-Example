@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace ApiProject.Models;
 
@@ -32,6 +33,7 @@ public class Productos
     public Categories? Category { get; set; }
 
     public ICollection<Orders>? Orders { get; set; }
+    [JsonIgnore]
     public ICollection<OrderDetails>? OrderDetails { get; set; }
     public ICollection<InventoryLog>? InventoryLogs { get; set; }
 }

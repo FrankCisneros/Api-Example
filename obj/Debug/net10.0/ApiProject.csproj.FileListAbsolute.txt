@@ -1,7 +1,6 @@
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\appsettings.json
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.staticwebassets.endpoints.json
-C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.exe
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.deps.json
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.runtimeconfig.json
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.dll
@@ -167,3 +166,5 @@ C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net1
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\obj\Debug\net10.0\ApiProject.sourcelink.json
+C:\Users\gungr\Desktop\Proyectos personales\PracticaCS\ApiProject\bin\Debug\net10.0\ApiProject.exe
