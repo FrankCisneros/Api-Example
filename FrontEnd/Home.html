@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f7f2">
+    <title>Catálogo | Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="home">
+    <header class="site-header">
+        <a class="brand" href="/Home.html" aria-label="Inventario, inicio">
+            <span class="brand-mark" aria-hidden="true">I</span>
+            <span>inventario<span class="brand-period">.</span></span>
+        </a>
+        <a class="button button-dark header-login" href="/login.html">Iniciar sesión <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="catalog-page">
+        <section class="catalog-heading" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">PRODUCTOS Y EXISTENCIAS</p>
+                <h1 id="page-title">Catálogo<span class="heading-period">.</span></h1>
+            </div>
+            <p class="catalog-intro">Explora los productos disponibles y filtra por categoría.</p>
+        </section>
+
+        <section class="category-section" aria-labelledby="categories-title">
+            <div class="section-heading">
+                <h2 id="categories-title">Categorías</h2>
+                <span id="category-count" class="section-count" aria-live="polite"></span>
+            </div>
+            <div id="categoryFilters" class="category-filters" aria-label="Filtrar por categoría">
+                <p class="loading-message">Cargando categorías...</p>
+            </div>
+        </section>
+
+        <section class="products-section" aria-labelledby="products-title">
+            <div class="section-heading products-heading">
+                <h2 id="products-title">Todos los productos</h2>
+                <span id="product-count" class="section-count" aria-live="polite"></span>
+            </div>
+            <div id="productGrid" class="product-grid" aria-live="polite" aria-busy="true">
+                <p class="loading-message">Cargando productos...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Inventario</span>
+        <span>Catálogo de productos</span>
+    </footer>
+
+    <script src="./Code.js" defer></script>
+</body>
+</html>

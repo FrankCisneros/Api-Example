@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f7f2">
+    <title>Acceso | Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body data-page="auth">
+    <header class="site-header">
+        <a class="brand" href="/Home.html" aria-label="Inventario, volver al catálogo">
+            <span class="brand-mark" aria-hidden="true">I</span>
+            <span>inventario<span class="brand-period">.</span></span>
+        </a>
+        <a class="back-link" href="/Home.html"><span aria-hidden="true">←</span> Volver al catálogo</a>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-panel" aria-labelledby="auth-title">
+            <p class="eyebrow">TU ESPACIO DE TRABAJO</p>
+            <h1 id="auth-title">Qué bueno<br>tenerte <span class="heading-serif">aquí.</span></h1>
+            <p class="auth-description">Accede a tu cuenta para continuar.</p>
+
+            <div class="auth-tabs" role="tablist" aria-label="Acceso a la cuenta">
+                <button id="loginTab" class="auth-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="loginSection">Iniciar sesión</button>
+                <button id="registerTab" class="auth-tab" type="button" role="tab" aria-selected="false" aria-controls="registerSection">Crear cuenta</button>
+            </div>
+
+            <section id="loginSection" class="auth-form-panel" role="tabpanel" aria-labelledby="loginTab">
+                <form id="loginForm">
+                    <label class="field">
+                        <span>Correo electrónico</span>
+                        <input type="email" id="email" name="email" autocomplete="email" placeholder="nombre@correo.com" required>
+                    </label>
+                    <label class="field">
+                        <span>Contraseña</span>
+                        <input type="password" id="password" name="password" autocomplete="current-password" placeholder="Tu contraseña" required>
+                    </label>
+                    <button class="button button-dark submit-button" type="submit">Iniciar sesión <span aria-hidden="true">→</span></button>
+                </form>
+            </section>
+
+            <section id="registerSection" class="auth-form-panel" role="tabpanel" aria-labelledby="registerTab" hidden>
+                <form id="registerForm">
+                    <label class="field">
+                        <span>Nombre</span>
+                        <input type="text" id="registerName" name="name" maxlength="120" autocomplete="name" placeholder="Tu nombre" required>
+                    </label>
+                    <label class="field">
+                        <span>Correo electrónico</span>
+                        <input type="email" id="registerEmail" name="email" autocomplete="email" placeholder="nombre@correo.com" required>
+                    </label>
+                    <label class="field">
+                        <span>Contraseña</span>
+                        <input type="password" id="registerPassword" name="password" autocomplete="new-password" placeholder="Crea una contraseña" required>
+                    </label>
+                    <label class="field">
+                        <span>Número</span>
+                        <input type="number" id="registerNumber" name="number" min="0" max="99999999" inputmode="numeric" placeholder="Tu número" required>
+                    </label>
+                    <button class="button button-dark submit-button" type="submit">Crear cuenta <span aria-hidden="true">→</span></button>
+                </form>
+            </section>
+
+            <p id="authMessage" class="auth-message" role="status" aria-live="polite"></p>
+        </section>
+        <aside class="auth-aside" aria-hidden="true">
+            <span class="aside-index">01 / INVENTARIO</span>
+            <div class="aside-graphic">
+                <div class="graphic-ring graphic-ring-outer"></div>
+                <div class="graphic-ring graphic-ring-inner"></div>
+                <span class="graphic-mark">I</span>
+                <span class="graphic-dot"></span>
+            </div>
+            <p>Todo en su sitio.<br><span>Todo bajo control.</span></p>
+        </aside>
+    </main>
+
+    <script src="./Code.js" defer></script>
+</body>
+</html>
