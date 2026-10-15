@@ -136,3 +136,5 @@ _NCrunch*
 .bin
 bin
 bin/
+./bin
+/bin
